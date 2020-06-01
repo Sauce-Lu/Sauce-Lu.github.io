@@ -173,7 +173,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="问题概述"><a href="#问题概述" class="headerlink" title="问题概述"></a>问题概述</h2><p>​    我按照网上导入外部库的教程导入<a href="https://algs4.cs.princeton.edu/code/algs4.jar" target="_blank" rel="noopener">《算法4》的jar包</a>。但是显示无法import，如下图所示。</p>
-<p><img src="https://github.com/Sauce-Lu/Sauce-Lu.github.io/blob/master/picture/%E5%AF%BC%E5%85%A5%E5%8C%85%E9%94%99%E8%AF%AF.png?raw=true" alt="无法import外部库" title="显示The type edu.princeton.cs.algs4.Accumulator is not accessible">但是在默认包中可以找得到外部库，如下图。<img src="https://github.com/Sauce-Lu/Sauce-Lu.github.io/raw/master/picture/pct2.png" alt="" title="可以import">  </p>
+<p><img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct1.png" alt="无法import外部库" title="显示The type edu.princeton.cs.algs4.Accumulator is not accessible"></p>
+<p>但是在默认包中可以找得到外部库，如下图。<img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct2.png" alt="" title="可以import">   </p>
 <h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><blockquote>
 <p> 导致这个问题的原因是该《算法4》中algs4.jar包没有对class文件进行分包，而是直接放到同一个default package包中。 <a href="#refer-anchor"><sup>1</sup></a></p>
 </blockquote>
