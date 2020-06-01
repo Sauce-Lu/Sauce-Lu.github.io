@@ -173,28 +173,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="问题概述"><a href="#问题概述" class="headerlink" title="问题概述"></a>问题概述</h2><p>​    我按照网上导入外部库的教程导入<a href="https://algs4.cs.princeton.edu/code/algs4.jar" target="_blank" rel="noopener">《算法4》的jar包</a>。但是显示无法import，如下图所示。</p>
-<p><img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct1.png" alt="无法import外部库" title="显示The type edu.princeton.cs.algs4.Accumulator is not accessible"></p>
-<p>但是在默认包中可以找得到外部库，如下图。<img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct2.png" alt="" title="可以import">   </p>
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><blockquote>
-<p> 导致这个问题的原因是该《算法4》中algs4.jar包没有对class文件进行分包，而是直接放到同一个default package包中。 <a href="#refer-anchor"><sup>1</sup></a></p>
-</blockquote>
-<p>在java中，我们不能在一个非default package中使用jar包中的default package。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>推荐使用第一种方法</p>
-<h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><p>为了确保我们可以在非default package中import该jar包内容，我们需要手动对该jar包进行设置，使之不受 default package限制。  </p>
-<blockquote>
-<p>1 新建一个工程<br>2 创建一个新的project （注意：在create module-info.java 这个步骤时，选择Don’t Create，选了的话在第4步export前删掉src中module-info.java即可)<br>3 导入该包中所有class文件，具体操作： 右键src -&gt; import -&gt; 选择General 中 Archive File -&gt;选择相应的jar文件<br>4 导出jar包 右键src -&gt; export -&gt;  选择Java中 JAR file -&gt; 设置路径文件名 (忽略后面的警告)<a href="#refer-anchor"><sup>1</sup></a>  </p>
-</blockquote>
-<p>这样就生成了不受 default package限制的jar包，我们可以在project的非default package中的类中import 这些外部库的class文件。（注意：创建项目时不要 create module-info.java文件或者把项目里src里的module-info.java删除掉，否则还是不能import）</p>
-<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><p>我们使用的类文件都创建在 default package 中即可，创建类文件时 Package为空时就是创建在default package中。（我试了下，src中不可以有其他的package；记着创建项目时不要 create module-info.java文件或者把项目里src里的module-info.java删除掉）。</p>
-<div id="refer-anchor"></div>
-## 参考文献
-
-<p>[1]  <a href="https://blog.csdn.net/sinat_37976731/article/details/80531102" target="_blank" rel="noopener">Eclipse导入JAR后无法使用包内class时的解决方案</a></p>
-<ul>
-<li><p>​    </p>
-</li>
-</ul>
-
+        
       
 
       
@@ -207,72 +186,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/05/31/%E8%A7%A3%E5%86%B3%E5%AF%BC%E5%85%A5%E3%80%8A%E7%AE%97%E6%B3%954%E3%80%8B%E5%A4%96%E9%83%A8%E5%BA%93%E5%90%8E%E6%97%A0%E6%B3%95import%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hlw" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/20/hlw/">hlw</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/20/hlw/" class="archive-article-date">
-  	<time datetime="2020-05-20T14:51:20.975Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<hr>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>hello world</p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>hello world</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/20/hlw/">展开全文 >></a>
         </p>
       
 

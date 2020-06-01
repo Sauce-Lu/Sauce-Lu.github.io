@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>解决导入《算法4》外部库后无法import的问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题概述​    我按照网上导入外部库的教程导入《算法4》的jar包。但是显示无法import，如下图所示。  但是在默认包中可以找得到外部库，如下图。    问题原因  导致这个问题的原因是该《算法4》中algs4.jar包没有对class文件进行分包，而是直接放到同一个default package包中。 1  在java中，我们不能在一个非default package中使用jar包中的de">
+  <meta name="description" content="问题概述​    我按照网上导入外部库的教程导入《算法4》的jar包。但是显示无法import，如下图所示。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决导入《算法4》外部库后无法import的问题">
 <meta property="og:url" content="http://yoursite.com/2020/05/31/%E8%A7%A3%E5%86%B3%E5%AF%BC%E5%85%A5%E3%80%8A%E7%AE%97%E6%B3%954%E3%80%8B%E5%A4%96%E9%83%A8%E5%BA%93%E5%90%8E%E6%97%A0%E6%B3%95import%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题概述​    我按照网上导入外部库的教程导入《算法4》的jar包。但是显示无法import，如下图所示。  但是在默认包中可以找得到外部库，如下图。    问题原因  导致这个问题的原因是该《算法4》中algs4.jar包没有对class文件进行分包，而是直接放到同一个default package包中。 1  在java中，我们不能在一个非default package中使用jar包中的de">
+<meta property="og:description" content="问题概述​    我按照网上导入外部库的教程导入《算法4》的jar包。但是显示无法import，如下图所示。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct1.png">
 <meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct2.png">
 <meta property="article:published_time" content="2020-05-31T09:25:20.000Z">
-<meta property="article:modified_time" content="2020-06-01T14:53:48.502Z">
+<meta property="article:modified_time" content="2020-06-01T15:12:11.420Z">
 <meta property="article:author" content="Sauce Lu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct1.png">
@@ -178,6 +178,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="问题概述"><a href="#问题概述" class="headerlink" title="问题概述"></a>问题概述</h2><p>​    我按照网上导入外部库的教程导入<a href="https://algs4.cs.princeton.edu/code/algs4.jar" target="_blank" rel="noopener">《算法4》的jar包</a>。但是显示无法import，如下图所示。</p>
+<a id="more"></a>
+
 <p><img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct1.png" alt="无法import外部库" title="显示The type edu.princeton.cs.algs4.Accumulator is not accessible"></p>
 <p>但是在默认包中可以找得到外部库，如下图。<img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/pct2.png" alt="" title="可以import">   </p>
 <h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><blockquote>
@@ -293,8 +295,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/05/20/hlw/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hlw</div>
+    <a href="/2020/05/14/My-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">My first blog</div>
       <i class="icon-circle-right"></i>
     </a>
   
