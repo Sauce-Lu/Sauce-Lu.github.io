@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/6 | Hexo</title>
+  <title>Java基础方法引用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/06/index.html">
+  <meta name="description" content="Lambda表达式简述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础方法引用">
+<meta property="og:url" content="http://yoursite.com/2020/06/29/Java%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Lambda表达式简述">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-29T13:57:57.000Z">
+<meta property="article:modified_time" content="2020-06-30T02:03:49.571Z">
 <meta property="article:author" content="Sauce Lu">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -151,87 +156,114 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java方法引用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/Java%E5%86%85%E9%83%A8%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2020-06-29T13:58:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/Java%E5%86%85%E9%83%A8%E7%B1%BB/">Java内部类</a>
+    <h1 class="article-title" itemprop="name">
+      Java基础方法引用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/Java%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/" class="archive-article-date">
+	
+        <a href="/2020/06/29/Java%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/" class="archive-article-date">
   	<time datetime="2020-06-29T13:57:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
 </a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/Java%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/">Java基础方法引用</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Lambda表达式简述"><a href="#Lambda表达式简述" class="headerlink" title="Lambda表达式简述"></a>Lambda表达式简述</h4><a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<ul>
+<li><p>Lambda表达式作为实参传给函数，该实参对应的形参（假设为a)是函数式接口对象（实现了该接口的类的对象），该对象a会在函数中调用接口的方法(抽象方法)，<strong>Lambda表达式就是用来替换该函数中的这个函数调用</strong>。</p>
+<p>例如：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">vadd2</span><span class="params">(<span class="keyword">int</span> v)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">b</span><span class="params">(<span class="keyword">int</span> v,A x)</span></span>&#123;</span><br><span class="line">        System.out.println(x.vadd2(v));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String...args)</span></span>&#123;</span><br><span class="line">        B.b(<span class="number">50</span>,(v) -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> v+<span class="number">2</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    <code>(v) -&gt; {return v+2}</code>会替代 b函数中 函数式接口对象调用的抽象方法：<code>x.vadd2(v)</code>。</p>
+<p>​    所以Lambda表达式必须与函数中函数式接口对象调用的抽象方法的参数与返回类型一致。</p>
+<ul>
+<li>Lambda 表达式有三部分组成：<ul>
+<li>一个代码块</li>
+<li>参数</li>
+<li>自由变量值（指非参数而且不在代码中定义的变量）<ul>
+<li>当Lambda表达式使用自由变量值，那就称 该值被Lambda表达式捕获。</li>
+<li>lambda表达式捕获的自由变量必须<strong>事实最终变量</strong>，即变量初始化后就不能再修改它的值。Java1.8之前必须声明该变量为final，Java1.8之后，只要该变量事实上不会改变即可，不用显示声明为final。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line">    Runnable x = () -&gt;&#123;</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    上述代码中Lambda表达式内b就是自由变量值，若在<code>int b = 5</code>下再添加一行<code>b = 6;</code>，则会报错。</p>
+<ul>
+<li>Lambda表达式与嵌套块有相同的作用域，所以要考虑命名冲突与遮蔽等。</li>
+</ul>
+<h4 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h4><p><strong>1</strong>    方法引用是用来对冗余的Lambda表达式进行优化（代码变得简洁）。</p>
+<p><strong>2</strong>     只有当Lambda表达式只调用一个方法而不做其他操作时，才能把Lambda表达式重写为方法引用。</p>
+<p><strong>3</strong>    方法引用与Lambda表达式的区别：<strong>方法引用会指示编译器生成一个函数式接口的实例，覆盖这个接口的抽象方法来调用给定的方法。</strong> <strong>即生成类实例，再通过实例调用方法。</strong> 而Lambda表达式并没有生成函数式接口的实例。</p>
+<h3 id="常见的四种方法引用"><a href="#常见的四种方法引用" class="headerlink" title="常见的四种方法引用"></a>常见的四种方法引用</h3><h4 id="1-对象-对象方法"><a href="#1-对象-对象方法" class="headerlink" title="1    对象::对象方法"></a>1    对象::对象方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.function.Consumer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test1</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printHello</span><span class="params">(String z,Consumer&lt;String&gt; x)</span></span>&#123;</span><br><span class="line">		x.accept(z);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">new</span> test1().printHello(<span class="string">"Hello"</span>,System.out::println);</span><br><span class="line">        <span class="comment">//System类out方法返回PrintStream类的对象，匹配调用该类对象的println(String x)方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-类名-静态方法"><a href="#2-类名-静态方法" class="headerlink" title="2    类名::静态方法"></a>2    类名::静态方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.function.Consumer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test2</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printHello</span><span class="params">(String z,Consumer&lt;String&gt; x)</span></span>&#123;</span><br><span class="line">		x.accept(z);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printword</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printword</span><span class="params">(<span class="keyword">int</span> s)</span></span>&#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">new</span> test1().printHello(<span class="string">"Hello"</span>,test2::printword); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    <code>x.accept(z)</code>会被<code>test2.printword</code>函数所替代，然后根据accept的参数类型匹配<code>printword</code>函数。</p>
+<h4 id="3-super-父类实例方法"><a href="#3-super-父类实例方法" class="headerlink" title="3    super::父类实例方法"></a>3    super::父类实例方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">55</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">age</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.function.Supplier;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">printAge</span><span class="params">(Supplier&lt;Integer&gt; x)</span></span>&#123;</span><br><span class="line">        System.out.println(x.get());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printFatherAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        printAge(<span class="keyword">super</span>::age);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String...args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Son().printFatherAge();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-this-成员方法"><a href="#4-this-成员方法" class="headerlink" title="4    this::成员方法"></a>4    this::成员方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.function.Supplier;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test4</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> value = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getValue</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">ValueAdd2</span><span class="params">(Supplier&lt;Integer&gt; x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x.get()+<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">   	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">printValueAdd2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(ValueAdd2(<span class="keyword">this</span>::getValue));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">new</span> test4().printValueAdd2();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>[1] Java核心技术卷一 6.2.4方法引用</p>
+<p>[2] <a href="https://www.bilibili.com/video/BV1uJ411k7wy?p=451" target="_blank" rel="noopener">bilibili上黑马Java方法引用基础教学视频</a></p>
+
+      
+       
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      Sauce Lu
+    
+    <br>
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/06/29/Java方法引用/" title="Java基础方法引用" target="_blank">http://yoursite.com/2020/06/29/Java方法引用/</a>
+    <br>
+    <strong>版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    进行许可。转载请注明出处！
+    
+      <br>
+      <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    
+  </div>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+     
+      
+        <span id="busuanzi_container_page_pv">
+    	  阅读数：<span id="busuanzi_value_page_pv"></span> 次
+  	</span>
+       
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -243,7 +275,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -256,167 +288,156 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/29/Java%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/%E5%AD%90%E7%B1%BB%E8%B0%83%E7%94%A8%E7%88%B6%E7%B1%BBclone%E6%96%B9%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-06-29T07:33:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
 
+  
+<nav id="article-nav">
+  
+    <a href="/2020/06/29/Java%E5%86%85%E9%83%A8%E7%B1%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java内部类
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/29/%E5%AD%90%E7%B1%BB%E8%B0%83%E7%94%A8%E7%88%B6%E7%B1%BBclone%E6%96%B9%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">子类调用父类clone方法的理解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/%E5%AD%90%E7%B1%BB%E8%B0%83%E7%94%A8%E7%88%B6%E7%B1%BBclone%E6%96%B9%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/">子类调用父类clone方法的理解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Lambda表达式简述"><span class="toc-number">1.</span> <span class="toc-text">Lambda表达式简述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法引用"><span class="toc-number">2.</span> <span class="toc-text">方法引用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的四种方法引用"><span class="toc-number"></span> <span class="toc-text">常见的四种方法引用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-对象-对象方法"><span class="toc-number">1.</span> <span class="toc-text">1    对象::对象方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-类名-静态方法"><span class="toc-number">2.</span> <span class="toc-text">2    类名::静态方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-super-父类实例方法"><span class="toc-number">3.</span> <span class="toc-text">3    super::父类实例方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-this-成员方法"><span class="toc-number">4.</span> <span class="toc-text">4    this::成员方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/Java%E5%8F%8D%E5%B0%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-06-29T03:08:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/Java%E5%8F%8D%E5%B0%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">Java反射简单理解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/21/%E7%BA%A2%E9%BB%91%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-06-21T13:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
-</a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/21/%E7%BA%A2%E9%BB%91%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/">红黑查找二叉树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+
+
+
+	
+	    <section id="comments" class="comments">
+	      <style>
+	        .comments{margin:30px;padding:10px;background:#fff}
+	        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+	      </style>
+	      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    new Valine({
+        av: AV,
+        el: '#vcomment',
+        notify: notify,
+        app_id: "Uai7JKvDvejmvOhII88pL6h8-gzGzoHsz",
+        app_key: "1AERjRLjHrOT2RC6bavwGojc",
+        placeholder: "来说点什么吧",
+        avatar:"retro",
+    });
+</script>
+
+	  </section>
+	
 
 
           </div>
@@ -439,8 +460,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
