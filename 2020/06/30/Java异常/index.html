@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Java异常 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="异常 定义：程序在执行过程中，出现非正常情况，导致JVM非正常停止。 Java产生异常是通过创建异常对象，抛出&#x2F;捕获处理。抛出异常的方式为中断处理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java异常">
+<meta property="og:url" content="http://yoursite.com/2020/06/30/Java%E5%BC%82%E5%B8%B8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="异常 定义：程序在执行过程中，出现非正常情况，导致JVM非正常停止。 Java产生异常是通过创建异常对象，抛出&#x2F;捕获处理。抛出异常的方式为中断处理。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B81.png">
+<meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B82.png">
+<meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B83.png">
+<meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B84.png">
+<meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B85.png">
+<meta property="article:published_time" content="2020-06-30T09:17:46.000Z">
+<meta property="article:modified_time" content="2020-06-30T16:08:48.500Z">
 <meta property="article:author" content="Sauce Lu">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B81.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,37 +162,202 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java异常" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Java异常
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/30/Java%E5%BC%82%E5%B8%B8/" class="archive-article-date">
+
+	
+        <a href="/2020/06/30/Java%E5%BC%82%E5%B8%B8/" class="archive-article-date">
   	<time datetime="2020-06-30T09:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
 </a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/30/Java%E5%BC%82%E5%B8%B8/">Java异常</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><ul>
+<li>定义：程序在执行过程中，出现非正常情况，导致JVM非正常停止。</li>
+<li>Java产生异常是通过创建异常对象，抛出/捕获处理。抛出异常的方式为<strong>中断处理</strong>。</li>
+</ul>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h3 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h3><p>​    Java中异常都是<code>java.lang.Throwable</code>的子类，Throwable类有两个子类：</p>
+<ul>
+<li><p>Error类：描述Java运行时系统内部错误和资源耗尽错误，程序员对该类型错误无能为力，JVM只能通知用户，并妥善的终止程序。</p>
+</li>
+<li><p>Exception类：分为两大部分：</p>
+<ul>
+<li>RuntimeException：运行时异常，在运行时期检查抛出异常。在编译时，编译器不会检测运行异常。例如：错误的强制类型转换、数组越界访问、访问null指针等等。</li>
+<li>编译时期异常：检查型异常。在编译时就会检查，如果没有处理该异常，则编译失败。例如：试图超越文件末尾继续读取文件、打开一个不存在的文件等。</li>
+</ul>
+<p>Error与RuntimeException均为非检查型异常。</p>
+<p><strong>检查型异常必须处理（声明（抛出）/捕获处理）</strong>，非检查型异常，Error无需处理，<strong>RuntimeException一般不处理，也可简单抛出（用于程序开头检查）</strong>。</p>
+</li>
+</ul>
+<h3 id="异常产生过程分析"><a href="#异常产生过程分析" class="headerlink" title="异常产生过程分析"></a>异常产生过程分析</h3><p>​    分析JVM抛出异常过程：这个例子是：未处理RuntimeException异常，运行时抛出该异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getIntArrayValue</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = arr[index];</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String...args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">        <span class="keyword">int</span> c = getIntArrayValue(arr,<span class="number">5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p> 输出：</p>
+<img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B81.png" />
+
+<ol>
+<li><p>在getIntArrayValue函数运行arr[5]时，JVM检测到arr[5]会触发异常。</p>
+<ul>
+<li>JVM会根据异常类型创建异常对象，该异常对象包含了异常产生的（内容，原因，位置）。如下：内容是5，原因是数组越界。<code>new ArrayIndexOutOfBoundsException(&quot;5&quot;);</code></li>
+<li>在getIntArrayValue方法arr[5]这里没有异常处理程序（try…catch…)，JVM会把该异常对象抛出给方法调用者（即main方法）来处理这个异常。</li>
+</ul>
+</li>
+<li><p>程序在执行到main方法的<code>int a = arr[index];</code>这个位置时，main方法收到了JVM从getIntArrayValue方法抛出的异常<code>new ArrayIndexOutOfBoundsException(&quot;5&quot;);</code>，main方法在这个位置也没有异常处理逻辑(try…catch…)，所以main方法将该异常抛出给main方法调用这JVM处理。</p>
+</li>
+<li><p>JVM接收到<code>new ArrayIndexOutOfBoundsException(&quot;5&quot;);</code>这个异常对象</p>
+<ul>
+<li>把该异常对象（内容，原因，位置）以红色字体打印在控制台。（JVM调用异常对象的printStackTrace()方法在控制台红色字体打印异常的详细信息（栈轨迹、异常类型、创建异常对象时的字符串））</li>
+<li>通过中断处理，JVM终止当前正在执行的程序。</li>
+</ul>
+</li>
+</ol>
+<p>​    如果在上述过程中有对应异常的处理逻辑（try…catch），那么最终不会抛出异常中断程序，而是处理程序后继续执行。（不过因为我们不会对非检查型异常进行捕获处理，所以这里这段话只是起补充作用，并不适用于上述的数组越界异常）</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><h4 id="1-抛出异常throw"><a href="#1-抛出异常throw" class="headerlink" title="1 抛出异常throw"></a>1 抛出异常throw</h4><ul>
+<li><p>格式：<code>throw new 异常名(“string”);</code>  字符串可省略。</p>
+</li>
+<li><p>将异常对象（包含 内容、原因、位置）传递给调用者。</p>
+</li>
+<li><p>用途： 一般用于程序检测判断</p>
+<ul>
+<li>RuntimeException异常的检测。（其实就算不抛出RuntimeException异常，JVM在运行时仍然能检测到该异常并抛出）所以这里一般都用于程序开头。</li>
+<li><del>编译型异常的检测</del>（抛出异常的话，编译型异常一般都只是声明，不会显式抛出,所以这里只是举个例子）</li>
+</ul>
+<p>例如：程序开头的检测</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">    <span class="comment">//RuntimeException异常的检测</span></span><br><span class="line">    <span class="keyword">if</span>(a == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"空指针异常：数组为空"</span>)</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//该方法为读取指定的文件名的文件。呃。。。这里就是举个例子，确实这个函数也太憨了。。。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readSpecifiedFile</span><span class="params">(String fileName)</span> <span class="keyword">throws</span> FileNotFoundException</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(fileName.contentEquals(<span class="string">"D:\\data\\tiny.txt"</span>))</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="string">"此文件名并不是指定的文件名D:\data\tiny.txt"</span>);</span><br><span class="line">    <span class="keyword">var</span> in = <span class="keyword">new</span> Scanner(fileName);</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="2-声明异常throws"><a href="#2-声明异常throws" class="headerlink" title="2 声明异常throws"></a>2 声明异常throws</h4><p>​    用于检查型异常。</p>
+<p>​    编译型异常的处理有两种：声明异常、捕获处理异常（try…catch）</p>
+<ul>
+<li><strong>一个方法必须声明除捕获处理的检查型异常以外的检查型异常</strong>，否则编译时会报错。</li>
+<li>格式：<code>方法 throw 检查型异常1、检查型异常2...{}</code></li>
+<li>当方法声明异常后，当抛出异常时，抛出的异常l类型可能是声明的该异常，也可能是声明的该异常的子类异常。例如：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test2</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printFileContent</span><span class="params">(String fileName)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(fileName);</span><br><span class="line">    	<span class="keyword">var</span> in = <span class="keyword">new</span> Scanner(file);</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">        in.close();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String...args)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">        String fileName = <span class="string">"D:\\date\\Thisfileisnotexist.txt"</span>;</span><br><span class="line">        printFileContent(fileName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B82.png" />
+
+<p>可以看到，我们声明的时IOException异常，但是抛出的却是FileNotFoundException异常，该异常是IOEception异常的子类。</p>
+<ul>
+<li>子类覆盖了超类的一个方法，子类的方法声明的异常不能比超类声明的异常更通用。<ul>
+<li>父方法不声明异常，子方法就只能捕获处理异常(try…catch)。</li>
+<li>父方法声明异常，子方法声明的异常只能是与父方法声明异常相同或为它的子类。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-捕获异常try…catch"><a href="#3-捕获异常try…catch" class="headerlink" title="3 捕获异常try…catch"></a>3 捕获异常try…catch</h4><p>​    用于检查型异常。（非检查型异常一般都是交给JVM处理）</p>
+<ul>
+<li><p>捕获异常处理与抛出异常处理的区别：</p>
+<ul>
+<li>前面的抛出异常处理都是最终将异常对象交给JVM处理，JVM调用异常对象的printStackTrace()方法在控制台红色字体打印异常的详细信息（栈轨迹、异常类型、创建异常对象时的字符串）。</li>
+<li><strong>而捕获处理（try…catch)是将异常对象交给catch的代码块进行处理，然后继续执行try…catch的后续代码</strong>。</li>
+</ul>
+</li>
+<li><p>格式：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//可能会出现编译型异常的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型 形参名)&#123;</span><br><span class="line">    <span class="comment">//处理异常的代码  //一般有： 记录日志、打印异常信息、继续抛出异常</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型 形参名)&#123;</span><br><span class="line">    <span class="comment">//处理异常的代码  </span></span><br><span class="line">&#125;...</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    不论异常是否发生，<span class="keyword">finally</span>的代码都会继续执行</span><br><span class="line">      <span class="number">1</span>   <span class="keyword">try</span>中未抛出异常，<span class="keyword">try</span>代码块执行完成后执行<span class="keyword">finally</span>代码块，执行后续代码。</span><br><span class="line">      <span class="number">2</span>	  <span class="keyword">try</span>中抛出异常，被<span class="keyword">catch</span>捕获处理后，执行<span class="keyword">finally</span>代码块，执行后续代码。</span><br><span class="line">      <span class="number">3</span>   <span class="keyword">try</span>中抛出异常，没有被<span class="keyword">catch</span>捕获/或被<span class="keyword">catch</span>捕获后<span class="keyword">catch</span>又抛出异常没有被其他<span class="keyword">catch</span>捕获，则执行<span class="keyword">finally</span>代码，将异常对象传递给该方法调用者。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如上catch中，处理异常的代码的方式之一是 <strong>打印异常信息</strong>：</p>
+<p>Throwable类有三个打印异常信息的方法，其他异常均是Trhowable子类，所以可以调用这三种方法：</p>
+<ul>
+<li>public String getMessage():获取异常发生的原因，即打印异常类型。例如下面代码打印：</li>
+</ul>
+</li>
+</ul>
+  <img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B83.png" />
+
+
+
+<ul>
+<li><p>public String toString():获取异常的类型与异常描述信息（就是创建异常对象传入的字符串参数）。例如下面代码打印：</p>
+<img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B84.png" />
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>public void printStackTrace() 以红色字体打印异常的详细信息。异常的类型、异常描述信息，栈轨迹。（<strong>常用</strong>）例如下面代码打印：</p>
+<img src="https://github.com/Sauce-Lu/markdownpicture/raw/master/markdown_picture/%E5%BC%82%E5%B8%B85.png" />
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line">  <span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test2</span></span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printFileContent</span><span class="params">(String fileName)</span><span class="keyword">throws</span> FileNotFoundException </span>&#123;</span><br><span class="line">          File file = <span class="keyword">new</span> File(fileName);</span><br><span class="line">          Scanner in;</span><br><span class="line">  		in = <span class="keyword">new</span> Scanner(file);</span><br><span class="line">          <span class="comment">//...</span></span><br><span class="line">          in.close();</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String...args)</span></span>&#123;</span><br><span class="line">          String fileName = <span class="string">"D:\\date\\Thisfileisnotexist.txt"</span>;</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">          	printFileContent(fileName);</span><br><span class="line">          &#125;<span class="keyword">catch</span>(FileNotFoundException e)&#123;</span><br><span class="line">          	<span class="comment">//e.getMessage();</span></span><br><span class="line">          	<span class="comment">//System.out.println(e);</span></span><br><span class="line">          	<span class="comment">//e.printStackTrace();</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li>try…catch原理：try中代码块执行时抛出异常对象，会检测catch中是否有该异常对象的匹配：<strong>异常对象会按照catch的顺序分别将异常对象赋值给catch的异常类引用，如果赋值成功则匹配成功。</strong>然后执行对应catch的处理代码。</li>
+<li>finally最好不要有return语句，因为假设try代码块中也有return时，因为finally代码块在返回前是必须执行的，所以最终返回是finally的return而不是try的。</li>
+</ul>
+<h4 id="异常处理小结"><a href="#异常处理小结" class="headerlink" title="异常处理小结"></a>异常处理小结</h4><ol>
+<li><strong>运行时异常不需要处理：即不需要捕获、声明。甚至也可以不用抛出</strong>，因为在运行时JVM会检测到非检查型异常（包括运行时异常）。</li>
+<li><strong>编译型异常必须处理：捕获/声明。否则无法通过编译</strong>。</li>
+</ol>
+<h3 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h3><p>​    当需要一些异常而JDK没有定义过，可以自己定义。</p>
+<ul>
+<li>自定义的异常可继承 Exception / RuntimeException。<ul>
+<li>继承Exception表示该异常为编译型异常。</li>
+<li>继承RuntimeException表示该异常为运行时异常。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>[1] Java核心技术卷一 第七章异常</p>
+<p>[2] <a href="https://www.bilibili.com/video/BV1uJ411k7wy?p=288" target="_blank" rel="noopener">bilibili黑马Java异常教学视频</a></p>
+
+      
+       
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      Sauce Lu
+    
+    <br>
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/06/30/Java异常/" title="Java异常" target="_blank">http://yoursite.com/2020/06/30/Java异常/</a>
+    <br>
+    <strong>版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    进行许可。转载请注明出处！
+    
+      <br>
+      <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    
+  </div>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+     
+      
+        <span id="busuanzi_container_page_pv">
+    	  阅读数：<span id="busuanzi_value_page_pv"></span> 次
+  	</span>
+       
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,7 +369,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -206,306 +382,147 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/30/Java%E5%BC%82%E5%B8%B8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/Java%E5%86%85%E9%83%A8%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2020-06-29T13:58:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/29/Java%E5%86%85%E9%83%A8%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java内部类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/Java%E5%86%85%E9%83%A8%E7%B1%BB/">Java内部类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#异常"><span class="toc-number">1.</span> <span class="toc-text">异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常分类"><span class="toc-number">2.</span> <span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常产生过程分析"><span class="toc-number">3.</span> <span class="toc-text">异常产生过程分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">4.</span> <span class="toc-text">异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-抛出异常throw"><span class="toc-number">4.1.</span> <span class="toc-text">1 抛出异常throw</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-声明异常throws"><span class="toc-number">4.2.</span> <span class="toc-text">2 声明异常throws</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-捕获异常try…catch"><span class="toc-number">4.3.</span> <span class="toc-text">3 捕获异常try…catch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异常处理小结"><span class="toc-number">4.4.</span> <span class="toc-text">异常处理小结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义异常"><span class="toc-number">5.</span> <span class="toc-text">自定义异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/Java%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-29T13:57:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/Java%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/">Java基础方法引用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/%E5%AD%90%E7%B1%BB%E8%B0%83%E7%94%A8%E7%88%B6%E7%B1%BBclone%E6%96%B9%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-06-29T07:33:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/%E5%AD%90%E7%B1%BB%E8%B0%83%E7%94%A8%E7%88%B6%E7%B1%BBclone%E6%96%B9%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/">子类调用父类clone方法的理解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/Java%E5%8F%8D%E5%B0%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-06-29T03:08:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/Java%E5%8F%8D%E5%B0%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">Java反射简单理解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/21/%E7%BA%A2%E9%BB%91%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-06-21T13:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/21/%E7%BA%A2%E9%BB%91%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/">红黑查找二叉树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/31/%E8%A7%A3%E5%86%B3%E5%AF%BC%E5%85%A5%E3%80%8A%E7%AE%97%E6%B3%954%E3%80%8B%E5%A4%96%E9%83%A8%E5%BA%93%E5%90%8E%E6%97%A0%E6%B3%95import%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-05-31T09:25:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/31/%E8%A7%A3%E5%86%B3%E5%AF%BC%E5%85%A5%E3%80%8A%E7%AE%97%E6%B3%954%E3%80%8B%E5%A4%96%E9%83%A8%E5%BA%93%E5%90%8E%E6%97%A0%E6%B3%95import%E7%9A%84%E9%97%AE%E9%A2%98/">解决导入《算法4》外部库后无法import的问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+
+
+
+	
+	    <section id="comments" class="comments">
+	      <style>
+	        .comments{margin:30px;padding:10px;background:#fff}
+	        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+	      </style>
+	      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    new Valine({
+        av: AV,
+        el: '#vcomment',
+        notify: notify,
+        app_id: "Uai7JKvDvejmvOhII88pL6h8-gzGzoHsz",
+        app_key: "1AERjRLjHrOT2RC6bavwGojc",
+        placeholder: "来说点什么吧",
+        avatar:"retro",
+    });
+</script>
+
+	  </section>
+	
 
 
           </div>
@@ -528,8 +545,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
