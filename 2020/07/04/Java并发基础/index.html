@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java并发基础 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些Java并发基础的笔记，等以后看了Java并发编程与JVM虚拟机后再写一篇详细的Java并发笔记。 创建线程1 实现Runnable接口创建线程（推荐） 使用Thread(Runnable t)构造器创建线程（Thread类对象），调用start()方法启动线程。  Runnable接口中有一个抽象方法void run()。  具体实现：Thread类中有一个Runnable target实例">
+  <meta name="description" content="一些Java并发基础的笔记，等以后看了Java并发编程与JVM虚拟机后再写一篇详细的Java并发笔记。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java并发基础">
 <meta property="og:url" content="http://yoursite.com/2020/07/04/Java%E5%B9%B6%E5%8F%91%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一些Java并发基础的笔记，等以后看了Java并发编程与JVM虚拟机后再写一篇详细的Java并发笔记。 创建线程1 实现Runnable接口创建线程（推荐） 使用Thread(Runnable t)构造器创建线程（Thread类对象），调用start()方法启动线程。  Runnable接口中有一个抽象方法void run()。  具体实现：Thread类中有一个Runnable target实例">
+<meta property="og:description" content="一些Java并发基础的笔记，等以后看了Java并发编程与JVM虚拟机后再写一篇详细的Java并发笔记。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/blob/master/markdown_picture/%E5%B9%B6%E5%8F%912.png?raw=true">
 <meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/blob/master/markdown_picture/%E5%B9%B6%E5%8F%913.png?raw=true">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/blob/master/markdown_picture/%E5%B9%B6%E5%8F%915.png?raw=true">
 <meta property="og:image" content="https://github.com/Sauce-Lu/markdownpicture/blob/master/markdown_picture/%E5%B9%B6%E5%8F%916.png?raw=true">
 <meta property="article:published_time" content="2020-07-04T03:42:58.000Z">
-<meta property="article:modified_time" content="2020-07-05T07:01:52.062Z">
+<meta property="article:modified_time" content="2020-07-05T07:03:29.455Z">
 <meta property="article:author" content="Sauce Lu">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -184,6 +184,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>一些Java并发基础的笔记，等以后看了Java并发编程与JVM虚拟机后再写一篇详细的Java并发笔记。</p>
+<a id="more"></a>
+
 <h3 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h3><h4 id="1-实现Runnable接口创建线程（推荐）"><a href="#1-实现Runnable接口创建线程（推荐）" class="headerlink" title="1 实现Runnable接口创建线程（推荐）"></a>1 实现Runnable接口创建线程（推荐）</h4><ol>
 <li><p>使用<code>Thread(Runnable t)</code>构造器创建线程（Thread类对象），调用start()方法启动线程。</p>
 </li>
